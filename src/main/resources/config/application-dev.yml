@@ -19,10 +19,31 @@ spring:
             enabled: false # we use gulp + BrowserSync for livereload
     jackson:
         serialization.indent_output: true
+    datasource:
+        url: jdbc:h2:file:./target/h2db/db/simplesdlc;DB_CLOSE_DELAY=-1
+        name:
+        username: simplesdlc
+        password:
+    h2:
+        console:
+            enabled: false
+    jpa:
+        database-platform: io.github.mikeyfreake.myapp.domain.util.FixedH2Dialect
+        database: H2
+        show-sql: true
+        properties:
+            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
     data:
-        mongodb:
-            uri: mongodb://localhost:27017
-            database: simplesdlc
+        elasticsearch:
+            cluster-name:
+            cluster-nodes:
+            properties:
+                path:
+                  logs: target/elasticsearch/log
+                  data: target/elasticsearch/data
     mail:
         host: localhost
         port: 25
@@ -35,6 +56,9 @@ spring:
     profiles:
         include: swagger # automatically set the 'swagger' profile
 
+liquibase:
+    contexts: dev
+
 server:
     port: 8080
 
@@ -43,6 +67,10 @@ server:
 # ===================================================================
 
 jhipster:
+    cache: # Hibernate 2nd level cache, used by CacheConfiguration
+        timeToLiveSeconds: 3600
+        ehcache:
+            maxBytesLocalHeap: 16M
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)

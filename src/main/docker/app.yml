@@ -3,15 +3,20 @@ services:
     simplesdlc-app:
         image: simplesdlc
         external_links:
-            - simplesdlc-mongodb:mongodb
+            - simplesdlc-postgresql:postgresql
+            - simplesdlc-elasticsearch:elasticsearch
         environment:
             - SPRING_PROFILES_ACTIVE=prod
-            - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
-            - SPRING_DATA_MONGODB_DATABASE=simplesdlc
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/simplesdlc
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
         ports:
             - 8080:8080
-    simplesdlc-mongodb:
+    simplesdlc-postgresql:
         extends:
-            file: mongodb.yml
-            service: simplesdlc-mongodb
+            file: postgresql.yml
+            service: simplesdlc-postgresql
+    simplesdlc-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: simplesdlc-elasticsearch

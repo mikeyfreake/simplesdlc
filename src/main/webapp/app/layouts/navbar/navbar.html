@@ -32,12 +32,6 @@
                         </span>
                     </a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                        <li ui-sref-active="active" >
-                            <a ui-sref="product" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
-                                <span >Product</span>
-                            </a>
-                        </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>
@@ -148,6 +142,12 @@
                             </a>
                         </li>
                         <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                        <li ng-hide="vm.inProduction">
+                            <a href='/h2-console' target="_tab" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-hdd"></span>&nbsp;
+                                <span>Database</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

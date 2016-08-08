@@ -12,7 +12,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface ProductRepository extends JpaRepository<Product,Long> {
 
-    @Query("select product from Product product where product.owner.login = ?#{principal.username}")
-    List<Product> findByOwnerIsCurrentUser();
+    @Query("select product from Product product where product.user.login = ?#{principal.username}")
+    List<Product> findByUserIsCurrentUser();
 
 }

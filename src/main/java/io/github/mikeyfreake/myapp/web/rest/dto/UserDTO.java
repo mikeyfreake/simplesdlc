@@ -70,6 +70,10 @@ public class UserDTO {
     public String getLastName() {
         return lastName;
     }
+    
+    public String getName() {
+    	return this.firstName + " " + this.lastName;
+    }
 
     public String getEmail() {
         return email;

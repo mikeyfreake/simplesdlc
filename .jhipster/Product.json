@@ -1,7 +1,7 @@
 {
     "relationships": [
         {
-            "relationshipName": "owner",
+            "relationshipName": "user",
             "otherEntityName": "user",
             "relationshipType": "many-to-one",
             "otherEntityField": "name"

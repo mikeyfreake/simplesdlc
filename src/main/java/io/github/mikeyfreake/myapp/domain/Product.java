@@ -34,7 +34,7 @@ public class Product extends AbstractAuditingEntity implements Serializable {
     private String description;
 
     @ManyToOne
-    private User owner;
+    private User user;
 
     public Long getId() {
         return id;
@@ -60,12 +60,12 @@ public class Product extends AbstractAuditingEntity implements Serializable {
         this.description = description;
     }
 
-    public User getOwner() {
-        return owner;
+    public User getUser() {
+        return user;
     }
 
-    public void setOwner(User user) {
-        this.owner = user;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

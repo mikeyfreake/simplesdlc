@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="mfreake (generated)" id="1470627167791-1">
+      <addColumn tableName="product">
+         <column name="owner_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="mfreake (generated)" id="1470627167791-2">
+      <addForeignKeyConstraint baseColumnNames="owner_id"
+                               baseTableName="product"
+                               constraintName="FK_ck1t19h1svt2up1lyice0phbx"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="mfreake (generated)" id="1470627167791-3">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="mfreake (generated)" id="1470627167791-4">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="created_date"
+                        tableName="product"/>
+   </changeSet>
+   <changeSet author="mfreake (generated)" id="1470627167791-5">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="last_modified_date"
+                        tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="mfreake (generated)" id="1470627167791-6">
+      <dropDefaultValue columnDataType="timestamp"
+                        columnName="modified_date"
+                        tableName="jhi_entity_audit_event"/>
+   </changeSet>
+</databaseChangeLog>

@@ -1,5 +1,12 @@
 {
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "owner",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",
@@ -19,8 +26,10 @@
             "fieldValidateRulesMaxlength": "400"
         }
     ],
+    "changelogDate": "20160808031835",
     "dto": "no",
     "service": "no",
     "entityTableName": "product",
-    "pagination": "no"
+    "pagination": "no",
+    "enableEntityAudit": true
 }

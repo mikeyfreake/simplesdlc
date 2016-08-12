@@ -50,6 +50,10 @@ public class Release extends AbstractAuditingEntity implements Serializable {
     @NotNull
     private User assignedTo;
 
+    @ManyToOne
+    @NotNull
+    private Product product;
+
     public Long getId() {
         return id;
     }
@@ -104,6 +108,14 @@ public class Release extends AbstractAuditingEntity implements Serializable {
 
     public void setAssignedTo(User user) {
         this.assignedTo = user;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     @Override

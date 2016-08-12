@@ -5,9 +5,9 @@
         .module('simplesdlcApp')
         .controller('ReleaseDialogController', ReleaseDialogController);
 
-    ReleaseDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Release', 'User'];
+    ReleaseDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Release', 'User', 'Product'];
 
-    function ReleaseDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Release, User) {
+    function ReleaseDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Release, User, Product) {
         var vm = this;
 
         vm.release = entity;
@@ -16,6 +16,7 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.users = User.query();
+        vm.products = Product.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

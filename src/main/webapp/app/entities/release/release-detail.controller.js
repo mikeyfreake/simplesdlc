@@ -5,9 +5,9 @@
         .module('simplesdlcApp')
         .controller('ReleaseDetailController', ReleaseDetailController);
 
-    ReleaseDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Release', 'User'];
+    ReleaseDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Release', 'User', 'Product'];
 
-    function ReleaseDetailController($scope, $rootScope, $stateParams, previousState, entity, Release, User) {
+    function ReleaseDetailController($scope, $rootScope, $stateParams, previousState, entity, Release, User, Product) {
         var vm = this;
 
         vm.release = entity;

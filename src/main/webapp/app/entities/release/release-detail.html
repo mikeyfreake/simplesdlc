@@ -28,6 +28,10 @@
         <dd>
             {{vm.release.assignedTo.name}}
         </dd>
+        <dt><span>Product</span></dt>
+        <dd>
+            <a ui-sref="product-detail({id:vm.release.product.id})">{{vm.release.product.name}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

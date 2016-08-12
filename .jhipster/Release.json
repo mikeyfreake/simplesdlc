@@ -1,0 +1,50 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "assignedTo",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "state",
+            "fieldType": "ReleaseState",
+            "fieldValues": "Draft,Planning,Current,Cancelled,Complete",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "plannedStartDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "plannedEndDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "shortDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "128"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160812030949",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "release",
+    "pagination": "infinite-scroll",
+    "enableEntityAudit": true
+}

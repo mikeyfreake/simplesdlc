@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myReleaseLabel">Create or edit a Release</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.release.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.release.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <select class="form-control" name="state" ng-model="vm.release.state" id="field_state" required>
+                <option value="Draft">Draft</option>
+                <option value="Planning">Planning</option>
+                <option value="Current">Current</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Complete">Complete</option>
+            </select>
+            <div ng-show="editForm.state.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.state.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_plannedStartDate">Planned Start Date</label>
+                <div class="input-group">
+                    <input id="field_plannedStartDate" type="text" class="form-control" name="plannedStartDate" datetime-picker="{{dateformat}}" ng-model="vm.release.plannedStartDate" is-open="vm.datePickerOpenStatus.plannedStartDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('plannedStartDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_plannedEndDate">Planned End Date</label>
+                <div class="input-group">
+                    <input id="field_plannedEndDate" type="text" class="form-control" name="plannedEndDate" datetime-picker="{{dateformat}}" ng-model="vm.release.plannedEndDate" is-open="vm.datePickerOpenStatus.plannedEndDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('plannedEndDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shortDescription">Short Description</label>
+            <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                    ng-model="vm.release.shortDescription"
+                    required ng-maxlength="128" />
+            <div ng-show="editForm.shortDescription.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.shortDescription.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.shortDescription.$error.maxlength">
+                    This field cannot be longer than 128 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.release.description"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_assignedTo">Assigned To</label>
+            <select class="form-control" id="field_assignedTo" name="assignedTo" ng-model="vm.release.assignedTo" ng-options="user as user.name for user in vm.users track by user.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.assignedTo.$invalid">
+            <p class="help-block"
+                ng-show="editForm.assignedTo.$error.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

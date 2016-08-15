@@ -1,12 +1,17 @@
 package io.github.mikeyfreake.myapp.domain.util;
 
-import io.github.mikeyfreake.myapp.domain.util.JSR310DateConverters.*;
-
-import java.time.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
+
+import io.github.mikeyfreake.myapp.domain.util.JSR310DateConverters.DateToLocalDateTimeConverter;
+import io.github.mikeyfreake.myapp.domain.util.JSR310DateConverters.DateToZonedDateTimeConverter;
+import io.github.mikeyfreake.myapp.domain.util.JSR310DateConverters.LocalDateTimeToDateConverter;
+import io.github.mikeyfreake.myapp.domain.util.JSR310DateConverters.ZonedDateTimeToDateConverter;
 
 public final class JSR310PersistenceConverters {
 

@@ -1,10 +1,9 @@
 package io.github.mikeyfreake.myapp.web.rest;
 
-import io.github.mikeyfreake.myapp.config.JHipsterProperties;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.core.env.Environment;
@@ -12,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.github.mikeyfreake.myapp.config.JHipsterProperties;
 
 @RestController
 @RequestMapping("/api")

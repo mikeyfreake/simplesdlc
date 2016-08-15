@@ -1,8 +1,9 @@
 package io.github.mikeyfreake.myapp;
 
-import io.github.mikeyfreake.myapp.config.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+
+import io.github.mikeyfreake.myapp.config.DefaultProfileUtil;
 
 /**
  * This is a helper Java class that provides an alternative to creating a web.xml.

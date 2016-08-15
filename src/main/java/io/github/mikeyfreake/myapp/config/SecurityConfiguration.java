@@ -1,8 +1,6 @@
 package io.github.mikeyfreake.myapp.config;
 
-import io.github.mikeyfreake.myapp.security.*;
-import io.github.mikeyfreake.myapp.web.filter.CsrfCookieGeneratorFilter;
-import io.github.mikeyfreake.myapp.config.JHipsterProperties;
+import javax.inject.Inject;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +12,19 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.csrf.CsrfFilter;
 
-import javax.inject.Inject;
+import io.github.mikeyfreake.myapp.security.AjaxAuthenticationFailureHandler;
+import io.github.mikeyfreake.myapp.security.AjaxAuthenticationSuccessHandler;
+import io.github.mikeyfreake.myapp.security.AjaxLogoutSuccessHandler;
+import io.github.mikeyfreake.myapp.security.AuthoritiesConstants;
+import io.github.mikeyfreake.myapp.security.CustomAccessDeniedHandler;
+import io.github.mikeyfreake.myapp.security.Http401UnauthorizedEntryPoint;
+import io.github.mikeyfreake.myapp.web.filter.CsrfCookieGeneratorFilter;
 
 @Configuration
 @EnableWebSecurity

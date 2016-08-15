@@ -1,13 +1,15 @@
 package io.github.mikeyfreake.myapp.web.rest.mapper;
 
-import io.github.mikeyfreake.myapp.domain.Authority;
-import io.github.mikeyfreake.myapp.domain.User;
-import io.github.mikeyfreake.myapp.web.rest.dto.UserDTO;
-import org.mapstruct.*;
-
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+
+import io.github.mikeyfreake.myapp.domain.Authority;
+import io.github.mikeyfreake.myapp.domain.User;
+import io.github.mikeyfreake.myapp.web.rest.dto.UserDTO;
 
 /**
  * Mapper for the entity User and its DTO UserDTO.

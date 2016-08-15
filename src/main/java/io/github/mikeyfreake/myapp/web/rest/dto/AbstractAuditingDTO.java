@@ -2,6 +2,7 @@ package io.github.mikeyfreake.myapp.web.rest.dto;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
+
 import org.springframework.data.annotation.ReadOnlyProperty;
 
 /**

@@ -1,17 +1,20 @@
 package io.github.mikeyfreake.myapp.config.audit;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.mikeyfreake.myapp.domain.AbstractAuditingEntity;
-import io.github.mikeyfreake.myapp.domain.EntityAuditEvent;
-import io.github.mikeyfreake.myapp.repository.EntityAuditEventRepository;
+import java.io.IOException;
+import java.lang.reflect.Field;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
-import javax.inject.Inject;
-import java.io.IOException;
-import java.lang.reflect.Field;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.github.mikeyfreake.myapp.domain.AbstractAuditingEntity;
+import io.github.mikeyfreake.myapp.domain.EntityAuditEvent;
+import io.github.mikeyfreake.myapp.repository.EntityAuditEventRepository;
 
 /**
  * Async Entity Audit Event writer

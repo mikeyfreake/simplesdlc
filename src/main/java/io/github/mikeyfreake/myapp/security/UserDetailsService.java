@@ -1,7 +1,12 @@
 package io.github.mikeyfreake.myapp.security;
 
-import io.github.mikeyfreake.myapp.domain.User;
-import io.github.mikeyfreake.myapp.repository.UserRepository;
+import java.util.List;
+import java.util.Locale;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
@@ -11,9 +16,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.*;
-import java.util.stream.Collectors;
+import io.github.mikeyfreake.myapp.domain.User;
+import io.github.mikeyfreake.myapp.repository.UserRepository;
 
 /**
  * Authenticate a user from the database.

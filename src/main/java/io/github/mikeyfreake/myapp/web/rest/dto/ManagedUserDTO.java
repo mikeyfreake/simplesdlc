@@ -1,12 +1,12 @@
 package io.github.mikeyfreake.myapp.web.rest.dto;
 
 import java.time.ZonedDateTime;
-
 import java.util.Set;
 
-import io.github.mikeyfreake.myapp.domain.User;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import io.github.mikeyfreake.myapp.domain.User;
 
 /**
  * A DTO extending the UserDTO, which is meant to be used in the user management UI.

@@ -1,12 +1,12 @@
 package io.github.mikeyfreake.myapp.repository;
 
-import io.github.mikeyfreake.myapp.domain.User;
-
 import java.time.ZonedDateTime;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import io.github.mikeyfreake.myapp.domain.User;
 
 /**
  * Spring Data JPA repository for the User entity.

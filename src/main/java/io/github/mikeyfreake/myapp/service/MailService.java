@@ -1,7 +1,9 @@
 package io.github.mikeyfreake.myapp.service;
 
-import io.github.mikeyfreake.myapp.config.JHipsterProperties;
-import io.github.mikeyfreake.myapp.domain.User;
+import java.util.Locale;
+
+import javax.inject.Inject;
+import javax.mail.internet.MimeMessage;
 
 import org.apache.commons.lang.CharEncoding;
 import org.slf4j.Logger;
@@ -14,10 +16,8 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
-
-import javax.inject.Inject;
-import javax.mail.internet.MimeMessage;
-import java.util.Locale;
+import io.github.mikeyfreake.myapp.config.JHipsterProperties;
+import io.github.mikeyfreake.myapp.domain.User;
 
 /**
  * Service for sending e-mails.

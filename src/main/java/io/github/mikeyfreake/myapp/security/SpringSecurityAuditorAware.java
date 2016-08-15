@@ -1,9 +1,9 @@
 package io.github.mikeyfreake.myapp.security;
 
-import io.github.mikeyfreake.myapp.config.Constants;
-
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+
+import io.github.mikeyfreake.myapp.config.Constants;
 
 /**
  * Implementation of AuditorAware based on Spring Security.

@@ -1,11 +1,12 @@
 package io.github.mikeyfreake.myapp.repository;
 
-import io.github.mikeyfreake.myapp.domain.PersistentToken;
-import io.github.mikeyfreake.myapp.domain.User;
 import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import io.github.mikeyfreake.myapp.domain.PersistentToken;
+import io.github.mikeyfreake.myapp.domain.User;
 
 /**
  * Spring Data JPA repository for the PersistentToken entity.

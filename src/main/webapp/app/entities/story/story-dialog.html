@@ -1,0 +1,137 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStoryLabel">Create or edit a Story</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.story.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.story.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shortDescription">Short Description</label>
+            <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                    ng-model="vm.story.shortDescription"
+                    required ng-maxlength="128" />
+            <div ng-show="editForm.shortDescription.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.shortDescription.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.shortDescription.$error.maxlength">
+                    This field cannot be longer than 128 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.story.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_acceptanceCriteria">Acceptance Criteria</label>
+            <input type="text" class="form-control" name="acceptanceCriteria" id="field_acceptanceCriteria"
+                    ng-model="vm.story.acceptanceCriteria"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_classification">Classification</label>
+            <select class="form-control" name="classification" ng-model="vm.story.classification" id="field_classification">
+                <option value="Project">Project</option>
+                <option value="Initiative">Initiative</option>
+                <option value="Enhancement">Enhancement</option>
+                <option value="BugorIssue">BugorIssue</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_effortPoints">Effort Points</label>
+            <input type="number" class="form-control" name="effortPoints" id="field_effortPoints"
+                    ng-model="vm.story.effortPoints"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_state">State</label>
+            <select class="form-control" name="state" ng-model="vm.story.state" id="field_state">
+                <option value="AwaitingInfo">AwaitingInfo</option>
+                <option value="Draft">Draft</option>
+                <option value="Ready">Ready</option>
+                <option value="Workinprogress">Workinprogress</option>
+                <option value="Readyfortesting">Readyfortesting</option>
+                <option value="Testing">Testing</option>
+                <option value="Complete">Complete</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Onhold">Onhold</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_urgency">Urgency</label>
+            <select class="form-control" name="urgency" ng-model="vm.story.urgency" id="field_urgency">
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_priority">Priority</label>
+            <select class="form-control" name="priority" ng-model="vm.story.priority" id="field_priority">
+                <option value="Critical">Critical</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="field_product">Product</label>
+            <select class="form-control" id="field_product" name="product" ng-model="vm.story.product" ng-options="product as product.name for product in vm.products track by product.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.product.$invalid">
+            <p class="help-block"
+                ng-show="editForm.product.$error.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="field_release">Release</label>
+            <select class="form-control" id="field_release" name="release" ng-model="vm.story.release" ng-options="release as release.description for release in vm.releases track by release.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_assignedTo">Assigned To</label>
+            <select class="form-control" id="field_assignedTo" name="assignedTo" ng-model="vm.story.assignedTo" ng-options="user as user.name for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_requestedBy">Requested By</label>
+            <select class="form-control" id="field_requestedBy" name="requestedBy" ng-model="vm.story.requestedBy" ng-options="user as user.name for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_sprint">Sprint</label>
+            <select class="form-control" id="field_sprint" name="sprint" ng-model="vm.story.sprint" ng-options="sprint as sprint.description for sprint in vm.sprints track by sprint.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

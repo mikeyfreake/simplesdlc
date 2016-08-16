@@ -1,0 +1,88 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "release",
+            "otherEntityName": "release",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "description"
+        },
+        {
+            "relationshipName": "assignedTo",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "requestedBy",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "sprint",
+            "otherEntityName": "sprint",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "description"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shortDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "128"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "acceptanceCriteria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "classification",
+            "fieldType": "StoryClassification",
+            "fieldValues": "Project,Initiative,Enhancement,Bug or Issue"
+        },
+        {
+            "fieldName": "effortPoints",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "StoryState",
+            "fieldValues": "Awaiting Info,Draft,Ready,Work in progress,Ready for testing,Testing,Complete,Cancelled,On hold"
+        },
+        {
+            "fieldName": "urgency",
+            "fieldType": "StoryUrgency",
+            "fieldValues": "Critical,High,Medium,Low"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "StoryPriority",
+            "fieldValues": "Critical,High,Medium,Low"
+        }
+    ],
+    "changelogDate": "20160815224126",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "story",
+    "pagination": "pagination",
+    "enableEntityAudit": true
+}

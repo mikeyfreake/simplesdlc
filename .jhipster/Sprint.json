@@ -1,0 +1,53 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "release",
+            "otherEntityName": "release",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "shortDescription"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shortDescription",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "128"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "SprintState",
+            "fieldValues": "Draft,Planning,Current,Complete,Cancelled"
+        },
+        {
+            "fieldName": "plannedStartDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "plannedEndDate",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160815224946",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "sprint",
+    "pagination": "pagination",
+    "enableEntityAudit": true
+}

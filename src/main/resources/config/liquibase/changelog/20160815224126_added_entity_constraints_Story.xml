@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Story.
+    -->
+    <changeSet id="20160815224126-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="story"
+                                 constraintName="fk_story_product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="release_id"
+                                 baseTableName="story"
+                                 constraintName="fk_story_release_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="release"/>
+
+        <addForeignKeyConstraint baseColumnNames="assigned_to_id"
+                                 baseTableName="story"
+                                 constraintName="fk_story_assignedto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="requested_by_id"
+                                 baseTableName="story"
+                                 constraintName="fk_story_requestedby_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="sprint_id"
+                                 baseTableName="story"
+                                 constraintName="fk_story_sprint_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sprint"/>
+
+    </changeSet>
+</databaseChangeLog>

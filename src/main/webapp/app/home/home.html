@@ -1,37 +1,44 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1>Simple SDLC</h1>
-            <p class="lead">A simple SCRUM framework implementation.</p>
+	<div class="row">
+		<div class="col-md-4">
+			<span class="hipster img-responsive img-rounded"></span>
+		</div>
+		<div class="col-md-8">
+			<h1>Simple SDLC</h1>
+			<p class="lead">A simple SCRUM framework implementation.</p>
 
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
+			<div ng-switch="vm.isAuthenticated()">
+				<div class="alert alert-success" ng-switch-when="true">You are
+					logged in as user "{{vm.account.login}}".</div>
 
-                <div class="alert alert-info" ng-switch-when="false">
-                    Don't have an account yet? <a class="alert-link" ui-sref="register">Register</a> to begin applying apply SCRUM for your projects and sustainment activities.
-                </div>
-            </div>
+				<div ng-switch-when="false">				
+					<div class="alert alert-info" ng-switch-when="false">
+						Don't have an account yet? <a class="alert-link" ui-sref="register">Register</a>
+						to begin applying apply SCRUM for your projects and sustainment
+						activities.
+					</div>
+					
+					<p>The following SDLC processes are contained in Simple SDLC:</p>
+	
+					<ul>
+						<li><em>Product Backlog</em> - track stories for all your
+							products and have the Product Owner maintain the priorities</li>
+						<li><em>Release Backlog</em> - group development iterations
+							into releases</li>
+						<!-- <li><em>Sprint Backlog</em> - </li>  -->
+						<li><em>Sprints</em> - attach stories to your sprints and
+							track progress</li>
+						<li><em>Stories</em> - capture short, simple descriptions of
+							functionality your users request</li>
+					</ul>
+				</div>
+			</div>
 
-            <p>
-                The following SDLC processes are contained in Simple SDLC:
-            </p>
-
-            <ul>
-                <li><em>Product Backlog</em> - track stories for all your products and have the Product Owner maintain the priorities</li>
-                <li><em>Release Backlog</em> - group development iterations into releases</li>
-                <!-- <li><em>Sprint Backlog</em> - </li>  -->
-                <li><em>Sprints</em> - attach stories to your sprints and track progress</li>
-                <!-- <li><em>Sprint Planning</em></li>  -->
-            </ul>
-
-            <p>
-             Simple SDLC is built with <a href="https://github.com/jhipster/generator-jhipster" target="_blank">JHipster</a>!
-            </p>
-        </div>
-    </div>
+			<p>
+				Simple SDLC is built with <a
+					href="https://github.com/jhipster/generator-jhipster"
+					target="_blank">JHipster</a>!
+			</p>
+		</div>
+	</div>
 </div>

@@ -1,8 +1,12 @@
-# simplesdlc
+# Simple SDLC
 
-This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
+Simple SDLC is a basic implementation of a SCRUM. It allows you to manage tasks in individually or within a team-based environment with the use of products, releases, sprints and stories. 
 
-## Development
+This application was generated using [JHipster][] for entity creation and basic CRUD. Additional functionality and UX changes were implemented via good ol' fashion coding.
+
+# Want to build Simple SDLC yourself?
+
+## Get the dependencies
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
@@ -50,8 +54,6 @@ Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in
 
     gulp test
 
-
-
 ## Continuous Integration
 
 To setup this project in Jenkins, use the following configuration:
@@ -67,6 +69,16 @@ To setup this project in Jenkins, use the following configuration:
     * Invoke Maven / Tasks: `-Pprod clean package`
 * Post-build Actions
     * Publish JUnit test result report / Test Report XMLs: `build/test-results/*.xml`
+
+# Releases Notes
+
+## v0.0.2 - September 2, 2016
+* Implemented the following entities, including relationships and persistence:
+    * Product
+    * Release
+    * Sprint
+    * Story
+* Update pre- and post-logon pages with welcome messages 
 
 [JHipster]: https://jhipster.github.io/
 [Node.js]: https://nodejs.org/

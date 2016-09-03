@@ -11,7 +11,7 @@
 
     <groupId>io.github.mikeyfreake.myapp</groupId>
     <artifactId>simplesdlc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>war</packaging>
     <name>Simplesdlc</name>
 

@@ -838,4 +838,6 @@
             </properties>
         </profile>
     </profiles>
+    <url>http://simplesdlc.herokuapp.com</url>
+    <description>A simple SCRUM framework implementation.</description>
 </project>
